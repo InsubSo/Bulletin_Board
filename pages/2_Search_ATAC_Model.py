@@ -10,36 +10,36 @@ import os
 # Function to get a database connection
 def get_db_connection():
     try:
-        conn = sqlite3.connect(path_database_lmk_public + name_database_flex_model)
+        conn = sqlite3.connect(name_database_flex_model)
         return conn
     except sqlite3.Error as e:
         st.error(f"Error connecting to database: {e}")
         return None
 
 
-def create_database_table():
-    # Ensure the directory exists
-    os.makedirs(path_database_lmk_public, exist_ok=True)
-
-    # Create the table if it doesn't exist
-    conn = get_db_connection()
-    if conn:
-        c = conn.cursor()
-        c.execute('''
-            CREATE TABLE IF NOT EXISTS models (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                POM TEXT,
-                LPR_Model_Name TEXT,
-                Type_Class TEXT,
-                ATAC_Model_Number TEXT,
-                ATAC_Spec_Model TEXT,
-                UI_Software TEXT,
-                ACA_CFG_Model TEXT,
-                Remark TEXT
-            )
-        ''')
-        conn.commit()
-        conn.close()
+# def create_database_table():
+#     # Ensure the directory exists
+#     os.makedirs(path_database_lmk_public, exist_ok=True)
+#
+#     # Create the table if it doesn't exist
+#     conn = get_db_connection()
+#     if conn:
+#         c = conn.cursor()
+#         c.execute('''
+#             CREATE TABLE IF NOT EXISTS models (
+#                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+#                 POM TEXT,
+#                 LPR_Model_Name TEXT,
+#                 Type_Class TEXT,
+#                 ATAC_Model_Number TEXT,
+#                 ATAC_Spec_Model TEXT,
+#                 UI_Software TEXT,
+#                 ACA_CFG_Model TEXT,
+#                 Remark TEXT
+#             )
+#         ''')
+#         conn.commit()
+#         conn.close()
 
 
 def add_model():
@@ -270,9 +270,7 @@ def delete_models(model_ids):
 
 
 if __name__ == "__main__":
-    # path_database_lmk_public = "\\\\pkor33file01\\LMK\Manufacturing\\Application\\Test_Web_Application_Bulletin_Board\\DB_File\\"
-    path_database_lmk_public = "\\\\fre_filer03\\2300testdata\PMATACConfig\\Osan\\activated_atac_pc_list\\bulletin_board_db_file\\"
-    name_database_flex_model = "flex_atac_models.db"
+    name_database_flex_model = "./db/flex_atac_models.db"
     # create_database_table()   # For first time , to created db file.
 
     sidebar_for_model_registration_form()
