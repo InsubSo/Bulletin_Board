@@ -1,7 +1,7 @@
 ﻿import streamlit as st
 import base64
 
-from streamlit_lottie import st_lottie  # pip install streamlit-lottie
+# from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 # GitHub: https://github.com/andfanilo/streamlit-lottie
 # Lottie Files: https://lottiefiles.com/
 

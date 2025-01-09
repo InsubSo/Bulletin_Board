@@ -270,7 +270,8 @@ def delete_models(model_ids):
 
 
 if __name__ == "__main__":
-    path_database_lmk_public = "\\\\pkor33file01\\LMK\Manufacturing\\Application\\Test_Web_Application_Bulletin_Board\\DB_File\\"
+    # path_database_lmk_public = "\\\\pkor33file01\\LMK\Manufacturing\\Application\\Test_Web_Application_Bulletin_Board\\DB_File\\"
+    path_database_lmk_public = "\\\\fre_filer03\\2300testdata\PMATACConfig\\Osan\\activated_atac_pc_list\\bulletin_board_db_file\\"
     name_database_flex_model = "flex_atac_models.db"
     # create_database_table()   # For first time , to created db file.
 
