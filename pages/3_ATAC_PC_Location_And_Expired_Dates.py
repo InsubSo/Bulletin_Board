@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 st.title("ATAC PC Location And Expired Dates")
 
 
-image_path = './Images/ATAC_PC_Location.JPG'
+image_path = 'D:/streamlit_modle_list/Images/ATAC_PC_Location.JPG'
 image = Image.open(image_path)
 st.image(image, caption='Flex ATAC PC Location', width=800)
 
